@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import { CSSTransition } from "react-transition-group";
 import { v4 as uuidv4 } from "uuid";
+
 import ContactList from "./components/ContactList/ContactList";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Filter from "./components/Filter/Filter";
 import Error from "./components/Error/Error.jsx";
-import { CSSTransition } from "react-transition-group";
+
 import fadeStyles from "./css/fade.module.css";
 import errorFadeStyles from "./css/errorFadeStyles.module.css";
 import "./App.css";
@@ -56,7 +58,9 @@ class App extends Component {
   deleteContact = (contactId) => {
     this.setState((prevState) => {
       return {
-        contacts: prevState.contacts.filter((contact) => contact.id !== contactId),
+        contacts: prevState.contacts.filter(
+          (contact) => contact.id !== contactId
+        ),
       };
     });
   };

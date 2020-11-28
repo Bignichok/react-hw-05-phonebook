@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ContactsListItem = ({ name, number, onDeleteContact }) => {
-  return (
+const ContactsListItem = ({ name, number, onDeleteContact }) => (
     <li className={`basic`}> 
       <div>
       <p>
@@ -11,15 +10,11 @@ const ContactsListItem = ({ name, number, onDeleteContact }) => {
       <p>
         <span>Number:</span> {number}
       </p>
-
-      </div>
-    
-      <button type="button" onClick={onDeleteContact}>
-       
-      </button>
+      </div> 
+      <button type="button" onClick={onDeleteContact}></button>
     </li>
   );
-};
+
 
 ContactsListItem.defaultProps = {
   name: "anonymous",

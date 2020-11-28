@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./Filter.module.css";
 import PropTypes from "prop-types";
 
-const Filter = ({ filter, onChangeFilter }) => {
-  return (
+import styles from "./Filter.module.css";
+
+const Filter = ({ filter, onChangeFilter }) => (
     <div className={`${styles.wrp} basic`}>
       <label className={styles.filterLabel}>
         Find Contacts by name
@@ -16,7 +16,7 @@ const Filter = ({ filter, onChangeFilter }) => {
           /> 
     </div>
   );
-};
+
 
 Filter.defaultProps = {
   onChangeFilter: () => {},
