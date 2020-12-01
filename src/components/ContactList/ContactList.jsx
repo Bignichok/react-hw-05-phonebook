@@ -7,7 +7,7 @@ import ContactsListItem from "./ContactListItem/ContactListItem";
 import styles from './ContactList.module.css'
 
 const ContactList = ({ contacts, onDeleteContact }) => {
- 
+
   return <TransitionGroup component='ul' className={`${styles.contactList} `}>
         {contacts.map(({ id, name, number }) => (
               <CSSTransition  key={id}

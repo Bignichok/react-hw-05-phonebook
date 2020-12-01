@@ -42,27 +42,23 @@ class App extends Component {
     if (contacts.some((contact) => contact.name === name)) {
       return this.toggleError();
     } else {
-      const contact = {
+      const newContact = {
         id: uuidv4(),
         name,
         number,
       };
-      this.setState((prevState) => {
-        return {
-          contacts: [contact, ...prevState.contacts],
-        };
-      });
+      this.setState((prevState) => ({
+        contacts: [newContact, ...prevState.contacts],
+      }));
     }
   };
 
   deleteContact = (contactId) => {
-    this.setState((prevState) => {
-      return {
-        contacts: prevState.contacts.filter(
-          (contact) => contact.id !== contactId
-        ),
-      };
-    });
+    this.setState((prevState) => ({
+      contacts: prevState.contacts.filter(
+        (contact) => contact.id !== contactId
+      ),
+    }));
   };
 
   changeFilter = (filter) => {
